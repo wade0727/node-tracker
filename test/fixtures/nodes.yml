@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  node: MyString
+  txlocation: MyString
+  rxlocation: MyString
+
+two:
+  node: MyString
+  txlocation: MyString
+  rxlocation: MyString

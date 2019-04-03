@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Node:</strong>
+  <%= @node.node %>
+</p>
+
+<p>
+  <strong>Txlocation:</strong>
+  <%= @node.txlocation %>
+</p>
+
+<p>
+  <strong>Rxlocation:</strong>
+  <%= @node.rxlocation %>
+</p>
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>
