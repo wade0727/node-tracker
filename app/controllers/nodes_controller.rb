@@ -1,5 +1,6 @@
 class NodesController < ApplicationController
   before_action :set_node, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /nodes
   # GET /nodes.json
@@ -14,7 +15,8 @@ class NodesController < ApplicationController
 
   # GET /nodes/new
   def new
-    @node = Node.new
+    @node = current_user.nodes.build
+
   end
 
   # GET /nodes/1/edit
@@ -24,7 +26,7 @@ class NodesController < ApplicationController
   # POST /nodes
   # POST /nodes.json
   def create
-    @node = Node.new(node_params)
+    @node = current_user.nodes.build(node_params)
 
     respond_to do |format|
       if @node.save
