@@ -7,10 +7,11 @@
   <thead>
     <tr>
       <th>Node</th>
-      <th>Txlocation</th>
-      <th>Rxlocation</th>
+      <th>Tx Location</th>
+      <th>Rx Location</th>
       <th>Created By</th>
       <th>Date Created</th>
+      <th>Last Updated</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,10 +23,11 @@
         <td><%= node.txlocation %></td>
         <td><%= node.rxlocation %></td>
         <td><%= node.user.first_name %></td>
-        <td><%= node.user.created_at %></td>
+        <td><%= node.user.created_at.strftime("%m/%d/%Y")%></td>
+        <td><%= node.user.updated_at.strftime("%m/%d/%Y")%></td>
         <td><%= link_to 'Show', node %></td>
         <td><%= link_to 'Edit', edit_node_path(node) %></td>
-        <td><%= link_to 'Destroy', node, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', node, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
