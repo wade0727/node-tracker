@@ -1,11 +1,10 @@
 <% obj.each do |node| %>
     <tr>
       <td><%= link_to node.node, node_path(node) %></td>
-      <td><%= node.node %></td>
       <td><%= node.txlocation %></td>
       <td><%= node.rxlocation %></td>
       <td><%= node.user.first_name %></td>
-      <td><%= node.user.created_at.strftime("%m/%d/%Y")%></td>
+      <td><%= node.user.created_at.strftime("%A, %d %b %Y %l:%M %p")%></td>
       <td><%= node.user.updated_at.strftime("%m/%d/%Y")%></td>
     </tr>
 <% end %>
