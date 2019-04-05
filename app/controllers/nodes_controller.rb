@@ -1,6 +1,5 @@
 class NodesController < ApplicationController
   before_action :set_node, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /nodes
   # GET /nodes.json
@@ -11,6 +10,7 @@ class NodesController < ApplicationController
   # GET /nodes/1
   # GET /nodes/1.json
   def show
+
   end
 
   # GET /nodes/new
@@ -71,6 +71,6 @@ class NodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
-      params.require(:node).permit(:node, :txlocation, :rxlocation)
+      params.require(:node).permit(:node, :txlocation, :rxlocation, :headend_id)
     end
 end

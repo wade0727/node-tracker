@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Headend:</strong>
+  <%= @headend.headend %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Node</th>
+      <th>Tx Location</th>
+      <th>Rx Location</th>
+      <th>Created By</th>
+      <th>Date Created</th>
+      <th>Last Updated</th>
+      <th colspan="3"></th>
+    </tr>
+    <%= render 'nodes/node', obj: @headend_nodes %>
+  </thead>
+</table>
+
+<%= link_to 'Edit', edit_headend_path(@headend) %>
+|
+<%= link_to 'Back', headends_path %>

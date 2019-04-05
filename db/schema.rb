@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_04_023520) do
+ActiveRecord::Schema.define(version: 2019_04_05_021123) do
+
+  create_table "headends", force: :cascade do |t|
+    t.string "headend"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "nodes", force: :cascade do |t|
     t.string "node"
@@ -19,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_04_04_023520) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "headend_id"
   end
 
   create_table "users", force: :cascade do |t|

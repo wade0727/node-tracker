@@ -26,6 +26,11 @@
     <%= form.text_field :rxlocation %>
   </div>
 
+  <div class="field">
+    <%= form.label :Headend %>
+    <%= form.collection_select(:headend_id, Headend.all, :id, :headend, :prompt => 'Select') %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

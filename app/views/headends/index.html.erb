@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Headends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Headend</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @headends.each do |headend| %>
+      <tr>
+        <td><%= link_to "#{headend.headend}", headend_path(headend) %></td>
+        <td><%= link_to 'Show', headend %></td>
+        <td><%= link_to 'Edit', edit_headend_path(headend) %></td>
+        <td><%= link_to 'Destroy', headend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Headend', new_headend_path %>

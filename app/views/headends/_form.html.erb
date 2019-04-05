@@ -1,0 +1,22 @@
+<%= form_with(model: headend, local: true) do |form| %>
+  <% if headend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(headend.errors.count, "error") %> prohibited this headend from being saved:</h2>
+
+      <ul>
+      <% headend.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :headend %>
+    <%= form.text_field :headend %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
