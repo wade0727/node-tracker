@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Nodes', nodes_path %>
 
 <h1>Headends</h1>
 
@@ -6,6 +7,7 @@
   <thead>
     <tr>
       <th>Headend</th>
+      <th>Node Count</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +16,7 @@
     <% @headends.each do |headend| %>
       <tr>
         <td><%= link_to "#{headend.headend}", headend_path(headend) %></td>
+        <td><%= pluralize(headend.nodes.count, "Node") %></td>
         <td><%= link_to 'Show', headend %></td>
         <td><%= link_to 'Edit', edit_headend_path(headend) %></td>
         <td><%= link_to 'Destroy', headend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
