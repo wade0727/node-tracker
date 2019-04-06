@@ -26,7 +26,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Use Bootstrap 4
+gem 'bootstrap', '~> 4.3.1'
+# Use Jquery
+gem 'jquery-rails'
+# Font Awesome Icons
+gem 'font-awesome-sass', '~> 5.8.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

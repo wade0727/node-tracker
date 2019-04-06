@@ -10,7 +10,12 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+    <%= render 'partials/navbar' %>
+    <% end %>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
   </body>
 </html>
