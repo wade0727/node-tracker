@@ -16,7 +16,7 @@
             <% @headends.each do |headend| %>
               <tr>
                 <td><%= link_to "#{headend.headend}", headend_path(headend) %></td>
-                <td><%= pluralize(headend.nodes.count, "Node") %></td>
+                <td><%= content_tag :span, pluralize(headend.nodes.count, "Node"), class: 'badge badge-info'%></td>
                 <td><%= link_to icon('fas', 'search-plus'), headend, class: "btn btn-success btn-sm" %>
                   <%= link_to icon('fas', 'edit'), edit_headend_path(headend), class: "btn btn-info btn-sm" %>
                   <%= link_to icon('fas', 'trash-alt'), headend, class: "btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
