@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Node:</strong>
-  <%= @node.node %>
-</p>
-
-<p>
-  <strong>Txlocation:</strong>
-  <%= @node.txlocation %>
-</p>
-
-<p>
-  <strong>Rxlocation:</strong>
-  <%= @node.rxlocation %>
-</p>
-
-<%= link_to 'Edit', edit_node_path(@node) %> |
-<%= link_to 'Back', nodes_path %>
+<div class="row">
+  <div class="col-sm-12 col-xl-3">
+    <div class="card">
+      <div class="card-header">
+        Node
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">Node
+            <span><%= @node.node %></span>
+          </li>
+          <li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">Transmitter Location
+            <span><%= @node.txlocation %></span>
+          </li>
+          <li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">Receiver Location
+            <span><%= @node.rxlocation %></span>
+          </li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Edit Node', edit_node_path(@node), class: "btn btn-primary" %>
+        <%= link_to 'Back', nodes_path, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,37 +1,47 @@
 <%= form_with(model: node, local: true) do |form| %>
-  <% if node.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(node.errors.count, "error") %> prohibited this node from being saved:</h2>
+<% if node.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(node.errors.count, "error") %>
+      prohibited this node from being saved:</h2>
 
-      <ul>
+    <ul>
       <% node.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+    </ul>
+  </div>
+<% end %>
+
+<div class="card">
+  <div class="card-header">
+    <strong>Node</strong>
+    <small></small>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <%= form.label :node %>
+      <%= form.text_field :node, class: "form-control", placeholder: "Ex. BBAC" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :node %>
-    <%= form.text_field :node, placeholder: "Ex. BBAC" %>
+    <div class="form-group">
+      <div class="field">
+        <%= form.label :txlocation, "TX Location" %>
+        <%= form.text_field :txlocation, class: "form-control", placeholder: "Ex. row.rack.elev.slot" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= form.label :rxlocation, "RX Locaiton" %>
+      <%= form.text_field :rxlocation, class: "form-control", placeholder: "Ex. row.rack.elev.slot" %>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-12">
+        <%= form.label :Headend %>
+        <%= form.collection_select(:headend_id, Headend.all, :id, :headend, {:prompt => 'Select'}, {:class => 'form-control'}) %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Submit Node', class: 'btn btn-xs btn-success' %>
+      <%= link_to "Cancel", nodes_path, class: 'btn btn-xs btn-danger' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :txlocation %>
-    <%= form.text_field :txlocation, placeholder: "Ex. row.rack.elev.slot" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rxlocation %>
-    <%= form.text_field :rxlocation, placeholder: "Ex. row.rack.elev.slot" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Headend %>
-    <%= form.collection_select(:headend_id, Headend.all, :id, :headend, :prompt => 'Select') %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>

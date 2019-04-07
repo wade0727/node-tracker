@@ -2,7 +2,6 @@
 
 <p>
   <strong>Headend:</strong>
-  <%= @headend.headend %>
 </p>
 
 <table>
@@ -19,7 +18,3 @@
     <%= render 'nodes/node', obj: @headend_nodes %>
   </thead>
 </table>
-
-<%= link_to 'Edit', edit_headend_path(@headend) %>
-|
-<%= link_to 'Back', headends_path %>

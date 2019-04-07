@@ -1,22 +1,32 @@
 <%= form_with(model: headend, local: true) do |form| %>
-  <% if headend.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(headend.errors.count, "error") %> prohibited this headend from being saved:</h2>
+<% if headend.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(headend.errors.count, "error") %>
+      prohibited this headend from being saved:</h2>
 
-      <ul>
+    <ul>
       <% headend.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
+    </ul>
+  </div>
+<% end %>
+
+<div class="card">
+  <div class="card-header">
+    <strong>Node</strong>
+    <small></small>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <%= form.label :headend, "Headend" %>
+      <%= form.text_field :headend, class: "form-control", placeholder: "Ex. Pinole" %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :headend %>
-    <%= form.text_field :headend %>
+    <div class="actions">
+      <%= form.submit 'Submit Headend', class: 'btn btn-xs btn-success' %>
+      <%= link_to "Cancel", headends_path, class: 'btn btn-xs btn-danger' %>
+    </div>
   </div>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
