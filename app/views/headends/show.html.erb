@@ -1,20 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Headend:</strong>
-</p>
+<div class="card text-center">
+  <div class="card-header">
+    <h4><strong>Headend:</strong> <%= @headend.headend %></h4>
+  </div>
+  <div class="card-body">
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Node</th>
+          <th>Tx Location</th>
+          <th>Rx Location</th>
+          <th>Created By</th>
+          <th>Date Created</th>
+          <th>Last Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render 'nodes/node', obj: @headend_nodes %>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer text-muted">
 
-<table>
-  <thead>
-    <tr>
-      <th>Node</th>
-      <th>Tx Location</th>
-      <th>Rx Location</th>
-      <th>Created By</th>
-      <th>Date Created</th>
-      <th>Last Updated</th>
-      <th colspan="3"></th>
-    </tr>
-    <%= render 'nodes/node', obj: @headend_nodes %>
-  </thead>
-</table>
+  </div>
+</div>
