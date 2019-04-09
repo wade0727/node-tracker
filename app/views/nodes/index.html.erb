@@ -1,40 +1,42 @@
 <p id="notice"><%= notice %></p>
-<div class="card text-center">
+<div class="card">
   <div class="card-header">
-    <h1 class="docs-title">Nodes</h1>
+    <h4><%= icon('fas', 'table', 'Nodes') %></h4> 
   </div>
-  <table class="table table-striped">
-    <thead class="thead-dark">
-      <tr>
-        <th>Node</th>
-        <th>Tx Location</th>
-        <th>Rx Location</th>
-        <th>Headend Location</th>
-        <th>Created By</th>
-        <th>Date Created</th>
-        <th>Last Updated</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @nodes.each do |node| %>
+  <div class="card-body">
+    <table role="datatable" class="table table-striped">
+      <thead class="thead-dark">
         <tr>
-          <td><%= node.node %></td>
-          <td><%= node.txlocation %></td>
-          <td><%= node.rxlocation %></td>
-          <td><%= node.headend.headend %></td>
-          <td><%= node.user.first_name %></td>
-          <td><%= node.created_at.strftime("%A, %d %b %Y %l:%M %p")%></td>
-          <td><%= node.updated_at.strftime("%A, %d %b %Y %l:%M %p")%></td>
-          <td><%= link_to icon('fas', 'search-plus'), node, class: "btn btn-secondary btn-sm" %>
-            <%= link_to icon('fas', 'edit'), edit_node_path(node), class: "btn btn-info btn-sm" %>
-            <%= link_to icon('fas', 'trash-alt'), node, class: "btn btn-dark btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
+          <th>Node</th>
+          <th>Tx Location</th>
+          <th>Rx Location</th>
+          <th>Headend Location</th>
+          <th>Created By</th>
+          <th>Date Created</th>
+          <th>Last Updated</th>
+          <th>Actions</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="card-footer text-muted">
+      </thead>
+      <tbody>
+        <% @nodes.each do |node| %>
+          <tr>
+            <td><%= node.node %></td>
+            <td><%= node.txlocation %></td>
+            <td><%= node.rxlocation %></td>
+            <td><%= node.headend.headend %></td>
+            <td><%= node.user.first_name %></td>
+            <td><%= node.created_at.strftime("%A, %d %b %Y %l:%M %p")%></td>
+            <td><%= node.updated_at.strftime("%A, %d %b %Y %l:%M %p")%></td>
+            <td><%= link_to icon('fas', 'search-plus'), node, class: "btn btn-secondary btn-sm" %>
+              <%= link_to icon('fas', 'edit'), edit_node_path(node), class: "btn btn-info btn-sm" %>
+              <%= link_to icon('fas', 'trash-alt'), node, class: "btn btn-dark btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer">
     <%= link_to icon('fas', 'plus', 'Add Node'), new_node_path, class: "btn btn-secondary" %>
   </div>
 </div>
