@@ -28,13 +28,15 @@
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-    </form>
     <ul class="navbar-nav px-3">
+      <li class="nav-item">
+        <a class="nav-link" href="#" aria-disabled="true">
+          <%= icon('fas', 'user') %>
+          <%= current_user.full_name.present? ? current_user.full_name : current_user.email %>
+        </a>
+      </li>
       <li class="nav-item text-nowrap">
-        <%= link_to "Sign out", destroy_user_session_path, class: "nav-link", method: :delete %>
+        <%= link_to "Sign out", destroy_user_session_path, class: "btn btn-outline-info my-2 my-sm-0", method: :delete %>
       </li>
     </ul>
   </div>

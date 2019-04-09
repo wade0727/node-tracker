@@ -19,8 +19,9 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function(){
-  $("table[role='datatable']").each(function(){
-    $(this).DataTable({});
+$(document).on('turbolinks:load', function() {
+  $("table[role='datatable']").each(function() {
+    $(this).DataTable({
+    });
   });
 })
