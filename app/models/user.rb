@@ -10,5 +10,5 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}".strip if (first_name || last_name)
     "Anonymous"
   end
-  
+
 end

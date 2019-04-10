@@ -17,6 +17,11 @@
           <li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">Receiver Location
             <span><%= @node.rxlocation %></span>
           </li>
+          <% @node.documents.each do |document| %>
+            <li class="list-group-item d-flex list-group-item-action justify-content-between align-items-center">
+              <%= link_to document.filename, document  %>
+            </li>
+          <% end %>
         </ul>
       </div>
       <div class="card-footer">
