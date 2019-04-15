@@ -1,33 +1,33 @@
 <div class="row">
   <div class="col-sm-6 col-xl-3">
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="text-muted small">Total Nodes</div>
-        <div class="text-large"><%= @nodes.count %></div>
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+      <div class="card-body text-info">
+        <div class="text-muted medium">Total Nodes</div>
+        <div class="text-large"><h4><%= @nodes.count %></h4></div>
       </div>
     </div>
   </div>
   <div class="col-sm-6 col-xl-3">
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="text-muted small">Most Recent Node</div>
-        <div class="text-large"><%= @nodes.last.node %></div>
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+      <div class="card-body text-info">
+        <div class="text-muted medium">Most Recent Node</div>
+        <div class="text-large"><h4><%= @nodes.last.node %></h4></div>
       </div>
     </div>
   </div>
   <div class="col-sm-6 col-xl-3">
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="text-muted small">Total Headends </div>
-        <div class="text-large"><%= @headends.count %></div>
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+      <div class="card-body text-info">
+        <div class="text-muted medium">Total Headends </div>
+        <div class="text-large"><h4><%= @headends.count %></div></h4>
       </div>
     </div>
   </div>
   <div class="col-sm-6 col-xl-3">
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="text-muted small">Total Users</div>
-        <div class="text-large"><%= @user.count %></div>
+    <div class="card border-info mb-3" style="max-width: 18rem;">
+      <div class="card-body text-info">
+        <div class="text-muted medium">Total Users</div>
+        <div class="text-large"><h4><%= @user.count %></div></h4>
       </div>
     </div>
   </div>
