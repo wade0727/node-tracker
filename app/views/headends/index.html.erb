@@ -1,34 +1,39 @@
 <p id="notice"><%= notice %></p>
-<!-- <div class="row"> <div class="col-8 col-xl-12 "> <div class="card border-dark mb-3"> <div class="card-body"> -->
-<div class="card text-center">
-  <div class="card-header">
-    <h1 class="docs-title">Headends</h1>
-  </div>
-  <table class="table table-striped">
-    <thead class="thead-dark">
-      <tr>
-        <th>Headend</th>
-        <th>Node Count</th>
-        <th colspan="1">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @headends.each do |headend| %>
-        <tr>
-          <td><%= headend.headend %></td>
-          <td>
-            <h5><%= content_tag :span, pluralize(headend.nodes.count, "Node"), class: 'badge badge-info'%></h5>
-          </td>
-          <td><%= link_to icon('fas', 'search-plus'), headend, class: "btn btn-secondary btn-sm" %>
-            <%= link_to icon('fas', 'edit'), edit_headend_path(headend), class: "btn btn-info btn-sm" %>
-            <%= link_to icon('fas', 'trash-alt'), headend, class: "btn btn-dark btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <div class="card-footer text-muted">
-    <%= link_to icon('fas', 'plus', 'Add Headend'), new_headend_path, class: "btn btn-secondary" %>
+
+<div class="row">
+  <div class="col align-self-center">
+    <div class="card border-info">
+      <div class="card-header">
+        <h4><%= icon('fas', 'server', 'Headends') %></h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Headend</th>
+              <th>Node Count</th>
+              <th colspan="1">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @headends.each do |headend| %>
+              <tr>
+                <td><%= headend.headend %></td>
+                <td>
+                  <h5><%= content_tag :span, pluralize(headend.nodes.count, "Node"), class: 'badge badge-info'%></h5>
+                </td>
+                <td><%= link_to icon('fas', 'search-plus'), headend, class: "btn btn-secondary btn-sm" %>
+                  <%= link_to icon('fas', 'edit'), edit_headend_path(headend), class: "btn btn-info btn-sm" %>
+                  <%= link_to icon('fas', 'trash-alt'), headend, class: "btn btn-dark btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="card-footer text-muted">
+        <%= link_to icon('fas', 'plus', 'Add Headend'), new_headend_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
   </div>
 </div>
-<!-- </div> </div> </div> </div> -->
