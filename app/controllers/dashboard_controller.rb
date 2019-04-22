@@ -4,5 +4,6 @@ class DashboardController < ApplicationController
     @nodes = Node.all
     @headends = Headend.all
     @user = User.all
+    @node = Node.upcoming
   end
 end

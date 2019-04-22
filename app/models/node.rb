@@ -5,4 +5,7 @@ class Node < ApplicationRecord
   validates :txlocation, presence: true
   validates :headend, presence: true
   has_many_attached :documents
+
+  scope :upcoming, ->{ where('cutdate BETWEEN ? AND ?', Date.current, 30.days.from_now) }
+
 end
