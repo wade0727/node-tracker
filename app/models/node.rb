@@ -7,5 +7,6 @@ class Node < ApplicationRecord
   has_many_attached :documents
 
   scope :upcoming, ->{ where('cutdate BETWEEN ? AND ?', Date.current, 30.days.from_now) }
+  scope :cut_complete, ->{ where("cut_complete =?", true) }
 
 end

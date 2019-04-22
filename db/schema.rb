@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_21_194756) do
+ActiveRecord::Schema.define(version: 2019_04_22_172400) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_194756) do
     t.text "comments"
     t.date "cutdate"
     t.date "origindate"
+    t.boolean "cut_complete", default: false
   end
 
   create_table "users", force: :cascade do |t|

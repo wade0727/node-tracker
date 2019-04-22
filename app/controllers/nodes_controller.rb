@@ -72,6 +72,7 @@ class NodesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
       params.require(:node).permit(:node, :txlocation, :rxlocation, :comments,
-                                   :cutdate, :origindate, :headend_id, documents: [])
+                                   :cutdate, :origindate, :headend_id, :cut_complete,
+                                   documents: [])
     end
 end
