@@ -13,6 +13,13 @@
       <%= f.input :txlocation, label: 'Transmitter Location', placeholder: '01.02.03.04' %>
       <%= f.input :rxlocation, label: 'Receiver Location', placeholder: '04.03.02.01' %>
       <%= f.input :headend_id, collection: Headend.all, label_method: :headend, label: "Headend", prompt: 'Select', required: true %>
+      <%= f.input :hub, label: 'HUB', placeholder: 'Berkeley A' %>
+      <%= f.input :cmts, label: 'CMTS', placeholder: 'acr01.berkeley' %>
+      <%= f.input :cmts_port, label: 'CMTS Port Assignment' %>
+      <%= f.input :arpd, label: 'ARPD' %>
+      <%= f.input :arpd_sg, label: 'ARPD Port Assignment' %>
+      <%= f.input :fw_mux, label: 'Forward MUX' %>
+      <%= f.input :rtn_mux, label: 'Return MUX' %>
       <%= f.input :comments %>
       <%= f.input :documents, as: :file, :input_html => { :multiple => true } %>
       <%= f.button :submit, 'Save', class: "btn-info" %>

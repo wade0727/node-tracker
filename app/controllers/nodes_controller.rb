@@ -73,6 +73,7 @@ class NodesController < ApplicationController
     def node_params
       params.require(:node).permit(:node, :txlocation, :rxlocation, :comments,
                                    :cutdate, :origindate, :headend_id, :cut_complete,
-                                   documents: [])
+                                   :hub, :cmts, :cmts_port, :arpd, :arpd_sg,
+                                   :fw_mux, :rtn_mux, documents: [])
     end
 end
