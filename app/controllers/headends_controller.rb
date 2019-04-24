@@ -58,7 +58,7 @@ class HeadendsController < ApplicationController
   def destroy
     @headend.destroy
     respond_to do |format|
-      format.html { redirect_to headends_url, notice: 'Headend was successfully destroyed.' }
+      format.html { redirect_to headends_url, alert: 'Headend was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

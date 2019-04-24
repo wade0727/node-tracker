@@ -58,7 +58,7 @@ class NodesController < ApplicationController
   def destroy
     @node.destroy
     respond_to do |format|
-      format.html { redirect_to nodes_url, notice: 'Node was successfully destroyed.' }
+      format.html { redirect_to nodes_url, alert: 'Node was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

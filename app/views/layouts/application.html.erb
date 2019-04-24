@@ -13,8 +13,9 @@
     <% if user_signed_in? %>
     <%= render 'partials/navbar' %>
     <% end %>
-    <p class="alert"><%= alert %></p>
     <div class="container">
+      <br>
+      <%= render 'partials/messages' %>
       <%= yield %>
     </div>
   </body>
