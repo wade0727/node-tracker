@@ -26,7 +26,7 @@
                 <td><%= node.detail_sow %></td>
                 <td><%= node.hub %></td>
                 <td><%= node.headend.headend %></td>
-                <td><%= node.cutdate.strftime("%m/%d/%Y")%></td>
+                <td><%= node.cutdate %></td>
                 <td><%= show_check_icon node.cut_complete %></td>
                 <td><%= link_to icon('fas', 'search-plus'), node, class: "btn btn-secondary btn-sm" %>
                     <%= link_to icon('fas', 'edit'), edit_node_path(node), class: "btn btn-info btn-sm" %>
