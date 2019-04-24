@@ -10,6 +10,7 @@
     </div>
     <div class="card-body">
       <%= f.input :node, placeholder: 'ABCD' %>
+      <%= f.input :detail_sow, placeholder: 'ABCD 2x2 OFF DCBA D ' %>
       <%= f.input :txlocation, label: 'Transmitter Location', placeholder: '01.02.03.04' %>
       <%= f.input :rxlocation, label: 'Receiver Location', placeholder: '04.03.02.01' %>
       <%= f.input :headend_id, collection: Headend.all, label_method: :headend, label: "Headend", prompt: 'Select', required: true %>

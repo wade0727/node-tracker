@@ -74,6 +74,6 @@ class NodesController < ApplicationController
       params.require(:node).permit(:node, :txlocation, :rxlocation, :comments,
                                    :cutdate, :origindate, :headend_id, :cut_complete,
                                    :hub, :cmts, :cmts_port, :arpd, :arpd_sg,
-                                   :fw_mux, :rtn_mux, documents: [])
+                                   :fw_mux, :rtn_mux, :detail_sow, documents: [])
     end
 end

@@ -23,7 +23,7 @@
             <% @nodes.each do |node| %>
               <tr>
                 <td><%= node.node %></td>
-                <td>Placeholder</td>
+                <td><%= node.detail_sow %></td>
                 <td><%= node.hub %></td>
                 <td><%= node.headend.headend %></td>
                 <td><%= node.cutdate.strftime("%m/%d/%Y")%></td>
@@ -39,7 +39,7 @@
           </tbody>
         </table>
       </div>
-      <div class="card-footer text-white bg-dark">
+      <div class="card-footer text-right text-white bg-dark">
         <%= link_to icon('fas', 'plus', 'Add Node'), new_node_path, class: "btn btn-info" %>
       </div>
     </div>
