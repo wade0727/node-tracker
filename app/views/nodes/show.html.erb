@@ -3,11 +3,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <h5>Node -
-        <%= @node.node %></h5>
+      <div class="card border-info text-white bg-dark mb-3">
+        <div class="card-body">
+          <h5><%= @node.node %></h5>
+        </div>
+      </div>
       <div class="card-deck">
-        <div class="card">
-          <div class="card-header">
+        <div class="card border-info">
+          <div class="card-header text-white bg-dark text-white bg-dark">
             Node Details
           </div>
           <div class="card-body">
@@ -27,8 +30,8 @@
             </ul>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header">
+        <div class="card border-info">
+          <div class="card-header text-white bg-dark">
             MUX Details
           </div>
           <div class="card-body">
@@ -42,8 +45,8 @@
             </ul>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header">
+        <div class="card border-info">
+          <div class="card-header text-white bg-dark">
             Services Details
           </div>
           <div class="card-body">
@@ -70,16 +73,16 @@
     <div class="col-md-12">
       <br>
       <div class="card-deck">
-        <div class="card">
-          <div class="card-header">
+        <div class="card border-info">
+          <div class="card-header text-white bg-dark">
             Comments
           </div>
           <div class="card-body">
             <p class="card-text"><%= @node.comments %></p>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header">
+        <div class="card border-info">
+          <div class="card-header text-white bg-dark">
             Scheduling
           </div>
           <div class="card-body">
@@ -103,3 +106,4 @@
   <%= link_to 'Edit Node', edit_node_path(@node), class: "btn btn-info" %>
   <%= link_to 'Back', nodes_path, class: "btn btn-secondary" %>
 </div>
+<br>

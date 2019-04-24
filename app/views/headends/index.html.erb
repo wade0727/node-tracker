@@ -3,11 +3,11 @@
 <div class="row">
   <div class="col align-self-center">
     <div class="card border-info">
-      <div class="card-header">
+      <div class="card-header text-white bg-dark">
         <h4><%= icon('fas', 'server', 'Headends') %></h4>
       </div>
       <div class="card-body">
-        <table class="table table-striped">
+        <table class="table table-striped table-sm">
           <thead class="thead-dark">
             <tr>
               <th>Headend</th>
@@ -33,8 +33,8 @@
           </tbody>
         </table>
       </div>
-      <div class="card-footer text-muted">
-        <%= link_to icon('fas', 'plus', 'Add Headend'), new_headend_path, class: "btn btn-secondary" %>
+      <div class="card-footer text-muted text-white bg-dark">
+        <%= link_to icon('fas', 'plus', 'Add Headend'), new_headend_path, class: "btn btn-info" %>
       </div>
     </div>
   </div>
